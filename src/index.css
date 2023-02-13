@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@layer base{
+  :root{
+    --gradient-blue: #2acfcf;
+    --color-very-light-blue: #E6F7FF;
+    --color-gray: #bfbfbf;
+    --color-purple: #4B3F6B;
+  }
+
+  .dark{
+    --color-very-dark-blue: #23272F;
+    --color-dark-blue: #343A46;
+    --color-blue: #149ECA;
+    --color-white: #ffffff;
+  }
+}
+
+@layer components{
+  body{
+    height: 100vh;
+  }
+}
