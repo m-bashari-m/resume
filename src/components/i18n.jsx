@@ -15,14 +15,16 @@ i18n
         translation: {
          About: "About",
          Projects: "Projects",
-         Contact: "Contact"
+         Contact: "Contact",
+         Developer: "Mojtaba Bashari",
         }
       },
       fa: {
         translation: {
           About: "درباره",
           Projects: "پروژه ها",
-          Contact: "ارتباط"
+          Contact: "ارتباط",
+          Developer: "مجتبی بشری",
         }
       },
     }

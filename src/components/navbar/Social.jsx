@@ -25,7 +25,7 @@ function Social() {
         icons.map((icon, index) => {
           return (
             <a key={index} href={icon.url} target='_blank'>
-              <Icon className="p-4">
+              <Icon className="p-3">
                 {icon.icon}
               </Icon>
             </a>

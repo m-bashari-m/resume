@@ -10,7 +10,7 @@ function Features(props) {
 
   return (
     <div className='flex'>
-      <Icon>
+      <Icon className="p-3">
         <BsTranslate 
           onClick={langToggler}
           size="24px"

@@ -24,12 +24,12 @@ module.exports = {
       },
 
       animation:{
-        open: 'open 800ms '
+        open: 'open 800ms ease-out'
       },
 
       keyframes: {
         open: {
-          '0%': { top: '-100vh'},
+          '0%': { top: '-250px'},
           '100%': { top: '0'}
         }
       }

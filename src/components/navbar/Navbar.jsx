@@ -19,34 +19,36 @@ function Navbar(props) {
   const isWide = useMedia('(min-width: 550px)')
 
   return (
-    <div className='navbar bg-navbar border-b-2 shadow-sm px-[5vw] flex justify-between items-center text-white py-4 xs:py-0'>
-      <div className='navbar--icons flex items-center justify-between max-w-xs'>
-        <Social />
-        <VerticalLine />
-        <Features />
-      </div>
-      {
-        isMenuOpen
-        ? !isWide && 
-          <Icon className="z-10"> 
-            <BsXLg  
-              onClick={handleToggle}
-              size="20px"/>
-          </Icon>
-        : !isWide && 
-          <Icon>
-            <BsList 
-              onClick={handleToggle}
-              size="28px"/>
-          </Icon>
-      }
-      {
-        !isWide && isMenuOpen && 
-        <Navigation className="absolute top-0 right-0 animate-open bg-slate-400 w-full"/>
-      }
-      <Navigation className="hidden xs:block"/>
-    </div>
+    <React.Fragment>
+      <nav className='navbar z-10 absolute top-0 w-full bg-navbar shadow-sm px-[5vw] flex justify-between items-center text-white py-4 xs:py-0'>
+        <div className='navbar--icons flex items-center justify-between max-w-xs space-x-3'>
+          <Social />
+          <VerticalLine />
+          <Features />
+        </div>
+        {
+          isMenuOpen
+          ? !isWide && 
+            <Icon className="z-10"> 
+              <BsXLg  
+                onClick={handleToggle}
+                size="20px"/>
+            </Icon>
+          : !isWide && 
+            <Icon>
+              <BsList 
+                onClick={handleToggle}
+                size="28px"/>
+            </Icon>
+        }
+        {
+          !isWide && isMenuOpen && 
+          <Navigation className="absolute top-0 right-0 animate-open bg-slate-400 w-full"/>
+        }
+        <Navigation className="hidden xs:block"/>
+      </nav>
+    </React.Fragment>
   )
 }
 
-export default withTranslation()(Navbar)
+export default Navbar
