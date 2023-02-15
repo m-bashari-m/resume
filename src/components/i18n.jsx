@@ -13,12 +13,16 @@ i18n
     resources: {
       en: {
         translation: {
-         welcome: "Welcome to React"
+         About: "About",
+         Projects: "Projects",
+         Contact: "Contact"
         }
       },
       fa: {
         translation: {
-         welcome: ""
+          About: "درباره",
+          Projects: "پروژه ها",
+          Contact: "ارتباط"
         }
       },
     }

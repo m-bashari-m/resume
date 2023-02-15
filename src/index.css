@@ -9,23 +9,28 @@
 }
 
 @layer base{
+  @font-face {
+    font-family: "Sans";
+    src: url("./src/assets/Iranian\ Sans.ttf");
+  }
+
   :root{
     --gradient-blue: #2acfcf;
     --color-very-light-blue: #E6F7FF;
     --color-gray: #bfbfbf;
     --color-purple: #4B3F6B;
-  }
-
-  .dark{
-    --color-very-dark-blue: #23272F;
-    --color-dark-blue: #343A46;
-    --color-blue: #149ECA;
-    --color-white: #ffffff;
+    --color-hover: #515151;
+    --color-navbar: #23272F;
+    --color-text-primary: #23272F;
   }
 }
 
 @layer components{
   body{
     height: 100vh;
+  }
+
+  .navigation--link{
+    @apply block xs:w-24 px-2 py-7 hover:bg-hover text-center transition duration-300;
   }
 }
