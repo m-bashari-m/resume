@@ -4,7 +4,7 @@ import Github from './Github'
 
 function Card(props) {  
   return (
-    <div className={`card rounded-xl overflow-hidden max-h-[650px] xs:h-[650px] flex xs:flex-row flex-col-reverse`}>
+    <div className={`card rounded-xl overflow-hidden max-h-[650px] xs:h-[550px] flex xs:flex-row flex-col-reverse`}>
       <div className={`xs:w-[800px] ${props.bg} py-2 xs:py-8 px-6 xs:px-10 xs:min-w-[300px]`}>
         <h1 className='text-2xl font-bold text-white break-words xs:text-3xl'>{props.title}</h1>
 
