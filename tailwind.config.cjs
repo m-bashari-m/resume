@@ -23,6 +23,10 @@ module.exports = {
        'xs' : '550px'
       },
 
+      maxWidth: {
+        '9/10': '90%',
+      },
+
       animation:{
         open: 'open 800ms ease-out',
         leftToRight: 'leftToRight 800ms ease-in-out alternate infinite',

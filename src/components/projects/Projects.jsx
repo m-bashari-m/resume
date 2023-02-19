@@ -28,7 +28,7 @@ function Projects() {
   const project = data[index];
 
   return (
-    <FullScreenSection bg="bg-gray-400" className="relative">
+    <FullScreenSection bg="bg-slate-600" className="relative">
       <Centralized className={`w-10/12 max-w-[1000px]`}>
         <div className="projects--arrow xs:hover:animate-leftToRight -left-[20px]">
           <BsArrowLeftCircleFill 

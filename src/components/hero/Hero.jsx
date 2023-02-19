@@ -7,7 +7,7 @@ import { withTranslation } from 'react-i18next'
 function Hero(props) {
   return (
     <FullScreenSection 
-    bg="bg-slate-600"
+    bg="bg-slate-700"
     className="relative">
       <Centralized>
         <div id='about'>

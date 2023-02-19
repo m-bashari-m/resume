@@ -41,4 +41,5 @@
   .github--button{
     @apply px-4 py-2 hover:bg-slate-500 transition duration-500 w-24 text-center h-full;
   }
+
 }

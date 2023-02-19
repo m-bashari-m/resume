@@ -1,4 +1,4 @@
-import { Hero, Navbar, Projects } from './components';
+import { Hero, Navbar, Projects, Skills } from './components';
 
 import './App.css'
 import { LanguageProvider } from './context/LanguageContext';
@@ -10,6 +10,7 @@ function App() {
         <Navbar />
         <Hero />
         <Projects />
+        <Skills />
       </div>
     </LanguageProvider>
   )
