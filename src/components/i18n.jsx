@@ -13,18 +13,12 @@ i18n
     resources: {
       en: {
         translation: {
-         About: "About",
-         Projects: "Projects",
-         Contact: "Contact",
-         Developer: "Mojtaba Bashari",
+         welcome: "Welcome to React"
         }
       },
       fa: {
         translation: {
-          About: "درباره",
-          Projects: "پروژه ها",
-          Contact: "ارتباط",
-          Developer: "مجتبی بشری",
+         welcome: ""
         }
       },
     }
