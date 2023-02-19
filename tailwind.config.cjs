@@ -24,14 +24,38 @@ module.exports = {
       },
 
       animation:{
-        open: 'open 800ms ease-out'
+        open: 'open 800ms ease-out',
+        leftToRight: 'leftToRight 800ms ease-in-out alternate infinite',
+        rightToLeft: 'rightToLeft 800ms ease-in-out alternate infinite',
       },
 
       keyframes: {
         open: {
           '0%': { top: '-250px'},
           '100%': { top: '0'}
-        }
+        },
+
+        leftToRight: {
+          '0%, 100%': {
+            left: '-20px',
+          },
+          '50%': {
+            left: '-25px',
+          }
+        },
+
+        rightToLeft:{
+          '0%, 100%': {
+            right: '-20px',
+          },
+          '50%': {
+            right: '-25px',
+          }
+        },
+      },
+
+      boxShadow: {
+        'button': '0 0 5px #000000',
       }
     },
   },

@@ -31,6 +31,14 @@
   }
 
   .navigation--link{
-    @apply block xs:w-24 px-2 py-7 hover:bg-hover text-center transition duration-300;
+    @apply block xs:w-[80px] px-2 py-7 hover:bg-hover text-center transition duration-300;
+  }
+
+  .projects--arrow{
+    @apply absolute top-1/2 -translate-y-1/2 z-20 rounded-full cursor-pointer shadow-button transition duration-300;
+  }
+
+  .github--button{
+    @apply px-4 py-2 hover:bg-slate-500 transition duration-500 w-24 text-center h-full;
   }
 }

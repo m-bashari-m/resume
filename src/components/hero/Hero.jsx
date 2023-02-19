@@ -8,7 +8,7 @@ function Hero(props) {
   return (
     <FullScreenSection 
     bg="bg-slate-600"
-    className="p-8 relative">
+    className="relative">
       <Centralized>
         <div id='about'>
           <Avatar/>
