@@ -42,4 +42,19 @@
     @apply px-4 py-2 hover:bg-slate-500 transition duration-500 w-24 text-center h-full;
   }
 
+  .contact--field{
+    @apply appearance-none focus:outline-none bg-gray-100 focus:bg-white p-2 mb-1 rounded-md w-full border border-gray-900 focus:ring-blue-600 focus:border-blue-600;
+  }
+
+  .contact--message {
+    @apply text-red-600 ml-1 absolute -bottom-4 text-xs;
+  }
+
+  .contact--label {
+    @apply mb-1 ml-1 relative;
+  }
+
+  .contact--group{
+    @apply flex flex-col mb-6 relative;
+  }
 }
