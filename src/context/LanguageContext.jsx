@@ -6,6 +6,15 @@ const LanguageContext = createContext({lang:"en"})
 export const LanguageProvider = ({children}) =>{
   const [lang, setLang] = useState("en")
 
+  useEffect(()=> {
+    const html = document.getElementsByTagName("html").item(0)
+    if (lang === "fa"){
+      html.setAttribute("dir", "rtl")
+    }else{
+      html.setAttribute("dir", "ltr")
+    }
+  }, [lang])
+
   const handleTrans = () => {
     setLang(prevLang => prevLang === "en" ? "fa" : "en")
   };

@@ -9,13 +9,14 @@ function Dots(props) {
           rounded-full
           w-6 
           h-6 
+          mx-1
           ${props.active===i ? "bg-zinc-800" : "bg-zinc-500"}`}
       ></div>
     )
   }
 
   return (
-    <div className='flex space-x-2 my-4 justify-center'>
+    <div className='flex my-4 justify-center rtl:flex-row-reverse'>
       {
         ...dots
       }

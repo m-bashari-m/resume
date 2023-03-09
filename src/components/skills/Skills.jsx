@@ -6,7 +6,7 @@ import ProgressBar from './ProgressBar'
 
 function Skills() {
   return (
-    <FullScreenSection className="relative" bg="bg-slate-500">
+    <FullScreenSection className="relative" bg="bg-slate-500" id="skills">
       <Centralized className="w-full">
         <div className='skills grid grid-cols-1 xs:grid-cols-2 gap-6 mx-auto max-w-9/10 w-[600px] items-center'>
           {

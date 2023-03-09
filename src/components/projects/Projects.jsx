@@ -6,7 +6,6 @@ import Dots from './Dots'
 import { data } from "../../data/projects"
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 
-
 function reducer(state, action){
   if (action.type === 'increment'){
     if (state+1 === data.length){
@@ -28,7 +27,7 @@ function Projects() {
   const project = data[index];
 
   return (
-    <FullScreenSection bg="bg-slate-600" className="relative">
+    <FullScreenSection bg="bg-slate-600" className="relative" id='projects'>
       <Centralized className={`w-10/12 max-w-[1000px]`}>
         <div className="projects--arrow xs:hover:animate-leftToRight -left-[20px]">
           <BsArrowLeftCircleFill 

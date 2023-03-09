@@ -20,8 +20,8 @@ function Navbar(props) {
 
   return (
     <React.Fragment>
-      <nav className='navbar z-10 absolute top-0 w-full bg-navbar shadow-sm px-[5vw] flex justify-between items-center text-white py-4 xs:py-0'>
-        <div className='navbar--icons flex items-center justify-between max-w-xs space-x-3'>
+      <nav className='navbar z-10 absolute top-0 w-full bg-navbar shadow-sm px-[5vw] flex justify-between rtl:flex-row-reverse items-center text-white py-4 xs:py-0'>
+        <div className='navbar--icons flex rtl:flex-row-reverse items-center justify-between max-w-xs space-x-3'>
           <Social />
           <VerticalLine />
           <Features />
@@ -43,7 +43,7 @@ function Navbar(props) {
         }
         {
           !isWide && isMenuOpen && 
-          <Navigation className="absolute top-0 right-0 animate-open bg-slate-400 w-full"/>
+          <Navigation className="absolute top-0 right-0 animate-open bg-slate-500 w-full"/>
         }
         <Navigation className="hidden xs:block"/>
       </nav>

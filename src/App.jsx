@@ -1,7 +1,7 @@
 import { Contact, Hero, Navbar, Projects, Skills } from './components';
 
 import './App.css'
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 function App() {
   return (

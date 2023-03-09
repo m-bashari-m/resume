@@ -1,32 +1,39 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import FullScreenSection from '../screen/FullScreenSection'
 import Centralized from '../screen/Centralized'
+import PopUp from './PopUp'
 import emailjs from "@emailjs/browser"
+import { withTranslation } from 'react-i18next'
+import { useLanguage } from '../../context/LanguageContext'
 
-const loginSchema = Yup.object().shape({
-  name: Yup.string().required('Please enter your name.').min(3, 'At least 3 characters needed.'),
-  email: Yup.string().email("Email is not valid").required('Please enter an email.'),
-  message: Yup.string().required("Message is a required field") ,
-})
+function Contact({ t }) {
+  const form = useRef()
+  const [popUp, setPopUp] = useState({show: false, error: false})
+  const { lang } = useLanguage()
 
+  const messageSchema = Yup.object().shape({
+    name: Yup.string().required(t("FormNameError")).min(3, t("FormNameError")),
+    email: Yup.string().email(t("FormEmailError")).required(t("FormEmailErrorRequired")),
+    message: Yup.string().required(t("FormMessageErrorRequired")) ,
+  })
 
-function Contact() {
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("send")
-    emailjs.sendForm("service_tbimuto", "template_s4atuzr", e.target, "CwtULAhTg4l8H-HVC")
+  const handleSubmit = (values, {resetForm}) => {    
+    emailjs.sendForm("service_3ozlpxn", "template_wivq72j", form.current, "6v5qfMemGfHsTItju")
     .then((result) => {
-      console.log(result.text);
+      setPopUp({show: true, error: false});
+      resetForm()
     }, (error) => {
-      console.log(error.text);
+      setPopUp({show: true, error: true});
     });
+
+    setTimeout(() => {setPopUp({show: false, error: false})}, 4000)
+
   }
 
   return (
-    <FullScreenSection className="relative" bg="bg-slate-400">
+    <FullScreenSection className={`relative`} bg="bg-slate-400" id="contact">
       <Centralized className="max-w-9/10 w-[800px]">
         <Formik
           initialValues={{
@@ -34,22 +41,24 @@ function Contact() {
             email: '',
             message: '',
           }}  
-          validationSchema={loginSchema}
+          validationSchema={messageSchema}
+          onSubmit={handleSubmit}
         >
           <Form 
-            className='flex flex-col bg-white p-5 rounded-lg mx-auto shadow-2xl'
-            onSubmit={handleSubmit}>
+            className='flex flex-col bg-orange-100 p-5 rounded-lg mx-auto shadow-2xl'
+            ref={form}
+            >
             <div className="grid xs:grid-cols-[3fr_4fr] xs:gap-6 grid-cols-1">
               <div className="contact--group">
                 <label className="contact--label" htmlFor='name'>
-                  Name
+                  {t("FormNamePlaceholder")}
                 </label>
                 <Field 
                   type="text"
                   className="contact--field" 
                   id='name' 
                   name='name'
-                  placeholder="Name"
+                  placeholder={t("FormNamePlaceholder")}
                 />
 
                 <ErrorMessage
@@ -61,14 +70,14 @@ function Contact() {
 
               <div className="contact--group">
                 <label className="contact--label" htmlFor='email'>
-                  Email
+                  {t("FormEmailPlaceholder")}
                 </label>
                 <Field
                   type="email"
                   className="contact--field" 
                   id='email' 
                   name='email'
-                  placeholder="Email" />
+                  placeholder={t("FormEmailPlaceholder")} />
                 <ErrorMessage 
                   component='a' 
                   className="contact--message"
@@ -77,14 +86,14 @@ function Contact() {
             </div>
             <div className="contact--group">
               <label className="contact--label" htmlFor='message'>
-                Message
+                {t("FormMessageField")}
               </label>
               <Field 
                 as="textarea"
                 className="contact--field h-[200px] resize-none" 
                 id='message' 
                 name='message'
-                placeholder="Type your message here..."
+                placeholder={t("FormMessagePlaceholder")}
                 />
               <ErrorMessage 
                 component='a' 
@@ -92,17 +101,21 @@ function Contact() {
                 name='message' />
               </div>
             
-            <div className='mt-8 mx-auto rounded-md p-4 bg-blue-600 w-[100px] text-center hover:bg-blue-700'>
-              <button type='submit' className="text-white font-bold">
-                Send
+              <button type='submit' className="text-white font-bold mt-8 mx-auto rounded-md p-4 bg-blue-600 w-[100px] text-center hover:bg-blue-700">
+                {t("FormSend")}
               </button>
-            </div>
-
           </Form>
         </Formik>
+        {
+            popUp.show 
+            ? (popUp.error 
+              ? <PopUp type='error'/> 
+              : <PopUp type='succuss'/>) 
+            : null
+        }
       </Centralized>
     </FullScreenSection>
   )
 }
 
-export default Contact
+export default withTranslation()(Contact)

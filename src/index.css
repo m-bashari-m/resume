@@ -31,7 +31,7 @@
   }
 
   .navigation--link{
-    @apply block xs:w-[80px] px-2 py-7 hover:bg-hover text-center transition duration-300;
+    @apply block xs:w-[90px] px-2 py-7 hover:bg-hover text-center transition duration-300 xs:border-none border-b-2 border-white cursor-pointer;
   }
 
   .projects--arrow{
@@ -43,7 +43,7 @@
   }
 
   .contact--field{
-    @apply appearance-none focus:outline-none bg-gray-100 focus:bg-white p-2 mb-1 rounded-md w-full border border-gray-900 focus:ring-blue-600 focus:border-blue-600;
+    @apply appearance-none focus:outline-none bg-gray-100 focus:bg-white p-2 mb-1 rounded-md w-full  border-2 border-gray-900 focus:ring-blue-600 focus:border-blue-600 focus:border-2;
   }
 
   .contact--message {
@@ -51,7 +51,7 @@
   }
 
   .contact--label {
-    @apply mb-1 ml-1 relative;
+    @apply mb-1 ml-1 relative rtl:justify-end;
   }
 
   .contact--group{

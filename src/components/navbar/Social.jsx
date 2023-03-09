@@ -20,7 +20,7 @@ const icons = [
 
 function Social() {
   return (
-    <div className='social flex justify-between'>
+    <div className='social flex justify-between rtl:flex-row-reverse'>
       {
         icons.map((icon, index) => {
           return (

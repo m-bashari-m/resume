@@ -31,6 +31,7 @@ module.exports = {
         open: 'open 800ms ease-out',
         leftToRight: 'leftToRight 800ms ease-in-out alternate infinite',
         rightToLeft: 'rightToLeft 800ms ease-in-out alternate infinite',
+        fadeIn: 'fadeIn 800ms ease-in-out'
       },
 
       keyframes: {
@@ -56,6 +57,17 @@ module.exports = {
             right: '-25px',
           }
         },
+
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+            bottom: '-80px'
+          },
+          '100%': {
+            opacity: '1',
+            bottom: '-60px'
+          }
+        }
       },
 
       boxShadow: {
