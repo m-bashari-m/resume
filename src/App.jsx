@@ -6,7 +6,7 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 function App() {
   return (
     <LanguageProvider>
-      <div className={`app font-sans text-primary`}>
+      <div className={`app text-primary`}>
         <Navbar />
         <Hero />
         <Projects />

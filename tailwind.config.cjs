@@ -6,10 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        sans: ["Sans", "sans-serif"]
-      },
-
       textColor:{
         primary: "var(--color-text-primary)"
       },

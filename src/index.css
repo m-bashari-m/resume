@@ -9,10 +9,6 @@
 }
 
 @layer base{
-  @font-face {
-    font-family: "Sans";
-    src: url("./src/assets/Iranian\ Sans.ttf");
-  }
 
   :root{
     --gradient-blue: #2acfcf;
